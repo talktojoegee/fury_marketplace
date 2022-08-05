@@ -49,8 +49,10 @@ class ServicesController extends Controller
     }
 
     public function getPhoneInfo($phoneNumbers, $type){
+        //return $phoneNumbers;
         $client = new Client();
         $url = $this->baseUrl."io/api/client/v1/phone/info/?token=".$this->adminApiToken."&phone=".$phoneNumbers."&type=".$type;
+        //return $url;
         $request = new \GuzzleHttp\Psr7\Request('GET', $url);
         $res = $client->sendAsync($request)->wait();
         return json_decode($res->getBody()->getContents());

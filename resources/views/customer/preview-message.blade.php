@@ -91,7 +91,7 @@
                             @csrf
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="mb-0 card-title">Review SMS</h5>
+                                    Review SMS</div>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">

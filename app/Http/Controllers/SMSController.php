@@ -57,7 +57,7 @@ class SMSController extends Controller
         $phone_number_array = preg_split("/, ?/",$request->phone_numbers);
         for($i = 0; $i<count($phone_number_array); $i++){
             $number = $this->appendCountryCode($phone_number_array[$i]);
-            array_push($filtered_numbers,$number);
+            array_push($filtered_numbers,str_replace(' ', '', $number));
         }
         $filter = array_unique($filtered_numbers);
         $phone_numbers = implode(",",$filter);
@@ -165,7 +165,7 @@ class SMSController extends Controller
                 foreach ($phonegroups as $phonegroup ){
                     $ex = explode(",", $phonegroup->phone_numbers);
                     for($i = 0; $i<count($ex); $i++){
-                        array_push($list, $ex[$i]);
+                        array_push($list, str_replace(' ','',$ex[$i]));
                     }
                 }
             }
@@ -175,50 +175,71 @@ class SMSController extends Controller
                 $phone_number_array = preg_split("/, ?/",$request->phone_numbers);
                 for($i = 0; $i<count($phone_number_array); $i++){
                     $number = $this->appendCountryCode($phone_number_array[$i]);
-                    array_push($list,$number);
+                    array_push($list,str_replace(' ', '', $number));
                 }
             }
             $filter = array_unique($list);
             $phone_numbers = implode(",",$filter);
             $persons = count($filter);
             $no_of_pages = round(strlen($request->senderId.":".$request->message)/160) < 1 ? 1 : round(strlen($request->senderId.":".$request->message)/160);
-            $cost = round($no_of_pages*3*$persons);
-            $sortedPhoneNumbers = $this->service->getPhoneInfo($phone_numbers, 3);
-            $data = $sortedPhoneNumbers->data;
-            /*
-             * Sort phone numbers according to network and DND status
-             */
-            $airTelNonDndArray  = $data->{'airtel non-dnd'} ?? [];
-            $airTelDndArray  = $data->{'airtel dnd'} ?? [];
-            $airtelCost = ($no_of_pages * 3.5 * count($airTelNonDndArray)) + ($no_of_pages * 5 * count($airTelDndArray));
+            /*$cost = round($no_of_pages*3*$persons);
+            $grandTotal = 0;
+            $airtelCost = 0;
+            $mtnCost = 0;
+            $gloCost = 0;
+            $mobileCost = 0;*/
+            $dnd = 0;
+            $ndnd = 0;
 
-            $mtnNonDndArray  = $data->{'mtn non-dnd'} ?? [];
-            $mtnDndArray  = $data->{'mtn dnd'} ?? [];
-            $mtnCost = ($no_of_pages * 3.5 * count($mtnNonDndArray)) + ($no_of_pages * 5 * count($mtnDndArray));
+            try{
+                $batchMax = 500;
+                //$counter = round(count($filter)/$batchMax);
+                $counter = round(count($filter)/$batchMax) <= 0 ? 1 : round(count($filter)/$batchMax);
+                for($i = 0; $i < $counter; $i++){
+                    $slice = array_slice($filter,($batchMax * $i),$batchMax);
+                    $implodeSlice = implode(",",$slice);
+                    $sortedPhoneNumbers = $this->service->getPhoneInfo($implodeSlice, 3);
+                    $data = $sortedPhoneNumbers->data;
+                    /*
+                     * Sort phone numbers according to network and DND status
+                     */
+                    $airTelNonDndArray  = $data->{'airtel non-dnd'} ?? [];
+                    $airTelDndArray  = $data->{'airtel dnd'} ?? [];
+                    //$airtelCost += ($no_of_pages * 3.5 * count($airTelNonDndArray)) + ($no_of_pages * 5 * count($airTelDndArray));
 
-            $gloNonDndArray = $data->{'glo non-dnd'} ?? [];
-            $gloDndArray = $data->{'glo dnd'} ?? [];
-            $gloCost = ($no_of_pages * 3.5 * count($gloNonDndArray)) + ($no_of_pages * 5 * count($gloDndArray));
+                    $mtnNonDndArray  = $data->{'mtn non-dnd'} ?? [];
+                    $mtnDndArray  = $data->{'mtn dnd'} ?? [];
+                    //$mtnCost += ($no_of_pages * 3.5 * count($mtnNonDndArray)) + ($no_of_pages * 5 * count($mtnDndArray));
 
-            $mobileNonDndArray = $data->{'9mobile non-dnd'} ?? [];
-            $mobileDndArray = $data->{'9mobile dnd'} ?? []; //9mobile
-            $mobileCost = ($no_of_pages * 3.5 * count($mobileNonDndArray)) + ($no_of_pages * 5 * count($mobileDndArray));
+                    $gloNonDndArray = $data->{'glo non-dnd'} ?? [];
+                    $gloDndArray = $data->{'glo dnd'} ?? [];
+                    //$gloCost += ($no_of_pages * 3.5 * count($gloNonDndArray)) + ($no_of_pages * 5 * count($gloDndArray));
 
-            $unknown = $airtelNonDnd = $data->{'unknown non-dnd'} ?? [];
-            $grandTotal = ($airtelCost + $mtnCost + $gloCost + $mobileCost);
+                    $mobileNonDndArray = $data->{'9mobile non-dnd'} ?? [];
+                    $mobileDndArray = $data->{'9mobile dnd'} ?? []; //9mobile
+                    //$mobileCost += ($no_of_pages * 3.5 * count($mobileNonDndArray)) + ($no_of_pages * 5 * count($mobileDndArray));
 
-            //$airtelNonDnd = $data->{'airtel non-dnd'};
-            //return count($airTelNonDndArray);
+                    $dnd += (count($airTelDndArray) + count($mtnDndArray) + count($gloDndArray) + count($mobileDndArray));
+                    $ndnd += (count($airTelNonDndArray) + count($mtnNonDndArray) + count($gloNonDndArray) + count($mobileNonDndArray));
 
-            return view('customer.preview-message',[
-                'cost'=>$grandTotal,
-                'persons'=>$persons,
-                'transactions'=>$this->bulksmsaccount->getBulkSmsTransactions(),
-                'pages'=>$no_of_pages,
-                'message'=>$request->message,
-                'phone_numbers'=>$phone_numbers,
-                'senderId'=>$request->senderId
-            ]);
+                    $unknown = $airtelNonDnd = $data->{'unknown non-dnd'} ?? [];
+
+                }
+                $grandTotal = (($dnd * 5) * $no_of_pages) + (($ndnd * 3.5) * $no_of_pages);
+
+                return view('customer.preview-message',[
+                    'cost'=>$grandTotal,
+                    'persons'=>$persons,
+                    'transactions'=>$this->bulksmsaccount->getBulkSmsTransactions(),
+                    'pages'=>$no_of_pages,
+                    'message'=>$request->message,
+                    'phone_numbers'=>$phone_numbers,
+                    'senderId'=>$request->senderId
+                ]);
+            }catch (\Exception $exception){
+                return dd($exception->getMessage());
+            }
+
         }
 
     }
