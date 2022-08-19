@@ -54,7 +54,8 @@ class RegisterController extends Controller
             'phoneNumber'=>'required',
             'email'=>'required|email|unique:users,email',
             'password'=>'required|confirmed',
-            'terms'=>'required'
+            'terms'=>'required',
+            'g-recaptcha-response' => 'required|captcha',
         ],[
             'firstName.required'=>'Enter first name in the field provided.',
             'phoneNumber.required'=>'What is your phone number?',
@@ -63,7 +64,9 @@ class RegisterController extends Controller
             'email.unique'=>"There's an account with this email address. Try another one.",
             'password.required'=>'Enter your chosen password',
             'password.confirmed'=>'Password confirmation mis-matched. Try again.',
-            'terms.required'=>'It is important you accept our terms & conditions to proceed'
+            'terms.required'=>'It is important you accept our terms & conditions to proceed',
+            'g-recaptcha-response.captcha'=>'Incorrect captcha',
+            'g-recaptcha-response.required'=>"Our system thinks you're a robot. Why not proof it wrong?",
         ]);
         $mobile = $this->services->appendCountryCode($request->phoneNumber);
         if(!empty($mobile)){

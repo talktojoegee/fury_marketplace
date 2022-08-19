@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return "Hello Index";
-});
+})->name('homepage');
 
 Route::prefix('/settings')->group(function(){
     Route::get('/locations', [App\Http\Controllers\Admin\SettingsController::class, 'locationSetup'])->name('location-setup');
