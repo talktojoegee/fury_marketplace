@@ -29,7 +29,7 @@
                         <div class="ps-block__left"><i class="icon-rocket"></i></div>
                         <div class="ps-block__right">
                             <h4>Free Delivery</h4>
-                            <p>For all oders over $99</p>
+                            <p>For all oders over {{env("APP_CURRENCY")}}99</p>
                         </div>
                     </div>
                     <div class="ps-block__item">
@@ -96,7 +96,7 @@
                                 </ul>
                             </div>
                             <div class="ps-product__container">
-                                <p class="ps-product__price sale">$567.99 <del>$670.00 </del><small>18% off</small></p>
+                                <p class="ps-product__price sale">{{env("APP_CURRENCY")}}567.99 <del>{{env("APP_CURRENCY")}}670.00 </del><small>18% off</small></p>
                                 <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Korea Long Sofa Fabric In Blue Navy Color</a>
                                     <div class="ps-product__rating">
                                         <select class="ps-rating" data-read-only="true">
@@ -124,7 +124,7 @@
                                 </ul>
                             </div>
                             <div class="ps-product__container">
-                                <p class="ps-product__price">$101.99<small>18% off</small></p>
+                                <p class="ps-product__price">{{env("APP_CURRENCY")}}101.99<small>18% off</small></p>
                                 <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Aroma Rice Cooker</a>
                                     <div class="ps-product__rating">
                                         <select class="ps-rating" data-read-only="true">
@@ -153,7 +153,7 @@
                                 </ul>
                             </div>
                             <div class="ps-product__container">
-                                <p class="ps-product__price sale">$42.00 <del>$60.00 </del><small>18% off</small></p>
+                                <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del><small>18% off</small></p>
                                 <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Simple Plastice Chair In White Color</a>
                                     <div class="ps-product__rating">
                                         <select class="ps-rating" data-read-only="true">
@@ -181,7 +181,7 @@
                                 </ul>
                             </div>
                             <div class="ps-product__container">
-                                <p class="ps-product__price">$320.00<small>18% off</small></p>
+                                <p class="ps-product__price">{{env("APP_CURRENCY")}}320.00<small>18% off</small></p>
                                 <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Korea Fabric Chair In Brown Colorr</a>
                                     <div class="ps-product__rating">
                                         <select class="ps-rating" data-read-only="true">
@@ -209,7 +209,7 @@
                                 </ul>
                             </div>
                             <div class="ps-product__container">
-                                <p class="ps-product__price">$85.00<small>18% off</small></p>
+                                <p class="ps-product__price">{{env("APP_CURRENCY")}}85.00<small>18% off</small></p>
                                 <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Set 14-Piece Knife From KichiKit</a>
                                     <div class="ps-product__rating">
                                         <select class="ps-rating" data-read-only="true">
@@ -237,7 +237,7 @@
                                 </ul>
                             </div>
                             <div class="ps-product__container">
-                                <p class="ps-product__price">$92.00<small>18% off</small></p>
+                                <p class="ps-product__price">{{env("APP_CURRENCY")}}92.00<small>18% off</small></p>
                                 <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Magic Bullet NutriBullet Pro 900 Series Blender</a>
                                     <div class="ps-product__rating">
                                         <select class="ps-rating" data-read-only="true">
@@ -266,7 +266,7 @@
                                 </ul>
                             </div>
                             <div class="ps-product__container">
-                                <p class="ps-product__price sale">$42.00 <del>$60.00 </del><small>18% off</small></p>
+                                <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del><small>18% off</small></p>
                                 <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Letter Printed Cushion Cover Cotton</a>
                                     <div class="ps-product__rating">
                                         <select class="ps-rating" data-read-only="true">
@@ -295,7 +295,7 @@
                                 </ul>
                             </div>
                             <div class="ps-product__container">
-                                <p class="ps-product__price sale">$42.00 <del>$60.00 </del><small>18% off</small></p>
+                                <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del><small>18% off</small></p>
                                 <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Letter Printed Cushion Cover Cotton</a>
                                     <div class="ps-product__rating">
                                         <select class="ps-rating" data-read-only="true">
@@ -410,10 +410,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}567.99 <del>{{env("APP_CURRENCY")}}670.00 </del></p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Marshall Kilburn Portable Wireless</a>
-                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}567.99 <del>{{env("APP_CURRENCY")}}670.00 </del></p>
                                 </div>
                             </div>
                         </div>
@@ -438,10 +438,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price">$101.99</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}101.99</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Xbox One Wireless Controller Black Color</a>
-                                    <p class="ps-product__price">$101.99</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}101.99</p>
                                 </div>
                             </div>
                         </div>
@@ -466,10 +466,10 @@
                                             <option value="2">5</option>
                                         </select><span>02</span>
                                     </div>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Sound Intone I65 Earphone White Version</a>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                             </div>
                         </div>
@@ -493,10 +493,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price">$320.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}320.00</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Samsung Gear VR Virtual Reality Headset</a>
-                                    <p class="ps-product__price">$320.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}320.00</p>
                                 </div>
                             </div>
                         </div>
@@ -520,10 +520,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price">$85.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}85.00</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Samsung UHD TV 24inch</a>
-                                    <p class="ps-product__price">$85.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}85.00</p>
                                 </div>
                             </div>
                         </div>
@@ -547,10 +547,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price">$92.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}92.00</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">EPSION Plaster Printer</a>
-                                    <p class="ps-product__price">$92.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}92.00</p>
                                 </div>
                             </div>
                         </div>
@@ -575,10 +575,10 @@
                                             <option value="2">5</option>
                                         </select><span>02</span>
                                     </div>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">LG White Front Load Steam Washer</a>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                             </div>
                         </div>
@@ -602,10 +602,10 @@
                                             <option value="2">5</option>
                                         </select><span>02</span>
                                     </div>
-                                    <p class="ps-product__price">$42.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}42.00</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Edifier Powered Bookshelf Speakers</a>
-                                    <p class="ps-product__price">$42.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}42.00</p>
                                 </div>
                             </div>
                         </div>
@@ -629,10 +629,10 @@
                                             <option value="2">5</option>
                                         </select><span>02</span>
                                     </div>
-                                    <p class="ps-product__price">$42.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}42.00</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Amcrest Security Camera in White Color</a>
-                                    <p class="ps-product__price">$42.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}42.00</p>
                                 </div>
                             </div>
                         </div>
@@ -656,10 +656,10 @@
                                             <option value="2">5</option>
                                         </select><span>02</span>
                                     </div>
-                                    <p class="ps-product__price">$42.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}42.00</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Amcrest Security Camera in White Color</a>
-                                    <p class="ps-product__price">$42.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}42.00</p>
                                 </div>
                             </div>
                         </div>
@@ -701,10 +701,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}567.99 <del>{{env("APP_CURRENCY")}}670.00 </del></p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Herschel Leather Duffle Bag In Brown Color</a>
-                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}567.99 <del>{{env("APP_CURRENCY")}}670.00 </del></p>
                                 </div>
                             </div>
                         </div>
@@ -728,10 +728,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price">$101.99</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}101.99</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Unero Military Classical Backpack</a>
-                                    <p class="ps-product__price">$101.99</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}101.99</p>
                                 </div>
                             </div>
                         </div>
@@ -756,10 +756,10 @@
                                             <option value="2">5</option>
                                         </select><span>02</span>
                                     </div>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Rayban Rounded Sunglass Brown Color</a>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                             </div>
                         </div>
@@ -783,10 +783,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price">$320.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}320.00</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Sleeve Linen Blend Caro Pane Shirt</a>
-                                    <p class="ps-product__price">$320.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}320.00</p>
                                 </div>
                             </div>
                         </div>
@@ -810,10 +810,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price">$85.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}85.00</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Men’s Sports Runnning Swim Board Shorts</a>
-                                    <p class="ps-product__price">$85.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}85.00</p>
                                 </div>
                             </div>
                         </div>
@@ -837,10 +837,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price">$92.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}92.00</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Paul’s Smith Sneaker InWhite Color</a>
-                                    <p class="ps-product__price">$92.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}92.00</p>
                                 </div>
                             </div>
                         </div>
@@ -865,10 +865,10 @@
                                             <option value="2">5</option>
                                         </select><span>02</span>
                                     </div>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">MVMTH Classical Leather Watch In Black</a>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                             </div>
                         </div>
@@ -910,10 +910,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}567.99 <del>{{env("APP_CURRENCY")}}670.00 </del></p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Korea Long Sofa Fabric In Blue Navy Color</a>
-                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}567.99 <del>{{env("APP_CURRENCY")}}670.00 </del></p>
                                 </div>
                             </div>
                         </div>
@@ -937,10 +937,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price">$101.99</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}101.99</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Aroma Rice Cooker</a>
-                                    <p class="ps-product__price">$101.99</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}101.99</p>
                                 </div>
                             </div>
                         </div>
@@ -965,10 +965,10 @@
                                             <option value="2">5</option>
                                         </select><span>02</span>
                                     </div>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Simple Plastice Chair In White Color</a>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                             </div>
                         </div>
@@ -992,10 +992,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price">$320.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}320.00</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Korea Fabric Chair In Brown Colorr</a>
-                                    <p class="ps-product__price">$320.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}320.00</p>
                                 </div>
                             </div>
                         </div>
@@ -1019,10 +1019,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price">$85.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}85.00</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Set 14-Piece Knife From KichiKit</a>
-                                    <p class="ps-product__price">$85.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}85.00</p>
                                 </div>
                             </div>
                         </div>
@@ -1046,10 +1046,10 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price">$92.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}92.00</p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Magic Bullet NutriBullet Pro 900 Series Blender</a>
-                                    <p class="ps-product__price">$92.00</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}92.00</p>
                                 </div>
                             </div>
                         </div>
@@ -1074,10 +1074,10 @@
                                             <option value="2">5</option>
                                         </select><span>02</span>
                                     </div>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Letter Printed Cushion Cover Cotton</a>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                             </div>
                         </div>
@@ -1102,10 +1102,10 @@
                                             <option value="2">5</option>
                                         </select><span>02</span>
                                     </div>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Letter Printed Cushion Cover Cotton</a>
-                                    <p class="ps-product__price sale">$42.00 <del>$60.00 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.00 <del>{{env("APP_CURRENCY")}}60.00 </del></p>
                                 </div>
                             </div>
                         </div>
@@ -1168,7 +1168,7 @@
                             <div class="ps-product--horizontal">
                                 <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/arrivals/1.jpg" alt="" /></a></div>
                                 <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Apple iPhone Retina 6s Plus 32GB</a>
-                                    <p class="ps-product__price">$990.50</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}990.50</p>
                                 </div>
                             </div>
                         </div>
@@ -1176,7 +1176,7 @@
                             <div class="ps-product--horizontal">
                                 <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/arrivals/1.jpg" alt="" /></a></div>
                                 <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Apple iPhone Retina 6s Plus 64GB</a>
-                                    <p class="ps-product__price">$1120.50</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}1120.50</p>
                                 </div>
                             </div>
                         </div>
@@ -1184,7 +1184,7 @@
                             <div class="ps-product--horizontal">
                                 <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/arrivals/1.jpg" alt="" /></a></div>
                                 <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Apple iPhone Retina 6s Plus 128GB</a>
-                                    <p class="ps-product__price">$1220.50</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}1220.50</p>
                                 </div>
                             </div>
                         </div>
@@ -1201,7 +1201,7 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price">$36.78 – $56.99</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}36.78 – {{env("APP_CURRENCY")}}56.99</p>
                                 </div>
                             </div>
                         </div>
@@ -1218,7 +1218,7 @@
                                             <option value="2">5</option>
                                         </select><span>02</span>
                                     </div>
-                                    <p class="ps-product__price">$125.30</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}125.30</p>
                                 </div>
                             </div>
                         </div>
@@ -1235,7 +1235,7 @@
                                             <option value="2">5</option>
                                         </select><span>02</span>
                                     </div>
-                                    <p class="ps-product__price">$55.30</p>
+                                    <p class="ps-product__price">{{env("APP_CURRENCY")}}55.30</p>
                                 </div>
                             </div>
                         </div>
@@ -1252,7 +1252,7 @@
                                             <option value="2">5</option>
                                         </select><span>02</span>
                                     </div>
-                                    <p class="ps-product__price sale">$41.27 <del>$52.99 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}41.27 <del>{{env("APP_CURRENCY")}}52.99 </del></p>
                                 </div>
                             </div>
                         </div>
@@ -1269,7 +1269,7 @@
                                             <option value="2">5</option>
                                         </select><span>01</span>
                                     </div>
-                                    <p class="ps-product__price sale">$41.27 <del>$62.39 </del></p>
+                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}41.27 <del>{{env("APP_CURRENCY")}}62.39 </del></p>
                                 </div>
                             </div>
                         </div>

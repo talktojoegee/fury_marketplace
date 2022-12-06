@@ -46,9 +46,13 @@ class BrandController extends Controller
     {
         $this->validate($request,[
             "brandName"=>"required|unique:brands,name",
+            "brandLogo"=>"required",
+            "category"=>"required",
         ],[
             "brandName.required"=>"Enter brand name",
             "brandName.unique"=>"The name you entered is already taken. Enter a different one.",
+            "brandLogo.required"=>"Choose brand logo to upload",
+            "category.required"=>"Choose a category for this brand."
         ]);
         $this->brand->createBrand($request);
         session()->flash("success", "New brand name published!");

@@ -11,11 +11,17 @@ class Brand extends Model
 {
     use HasFactory;
 
+
+    public function getBrandCategory(){
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
     public function createBrand(Request $request){
         $brand = new Brand();
         $brand->name = $request->brandName ?? '';
         $brand->slug = Str::slug($request->brandName).'-'.Str::random(5) ?? '';
         $brand->logo = $this->uploadBrandPicture($request->brandLogo);
+        $brand->category_id = $request->category ?? '' ;
         $brand->save();
     }
     public function editBrand(Request $request){

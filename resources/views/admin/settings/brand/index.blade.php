@@ -86,7 +86,7 @@
                                 <tr>
                                     <td>{{$serial++}}</td>
                                     <td> {{$brand->name ?? '' }}</td>
-                                    <td>Category</td>
+                                    <td>{{$brand->getBrandCategory->name ?? '' }}</td>
                                     <td>Action</td>
                                 </tr>
                             @endforeach

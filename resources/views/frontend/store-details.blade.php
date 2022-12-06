@@ -98,10 +98,10 @@
                                                                 <option value="2">5</option>
                                                             </select><span>01</span>
                                                         </div>
-                                                        <p class="ps-product__price sale">$1389.99 <del>$1893.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}1389.99 <del>{{env("APP_CURRENCY")}}1893.00</del></p>
                                                     </div>
                                                     <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Apple iPhone X 256GB T-Mobile – Black</a>
-                                                        <p class="ps-product__price sale">$1389.99 <del>$1893.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}1389.99 <del>{{env("APP_CURRENCY")}}1893.00</del></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -128,10 +128,10 @@
                                                                 <option value="2">5</option>
                                                             </select><span>01</span>
                                                         </div>
-                                                        <p class="ps-product__price sale">$820.99 <del>$893.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}820.99 <del>{{env("APP_CURRENCY")}}893.00</del></p>
                                                     </div>
                                                     <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Apple iPhone 7 Plus 128 GB – Red Color</a>
-                                                        <p class="ps-product__price sale">$820.99 <del>$893.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}820.99 <del>{{env("APP_CURRENCY")}}893.00</del></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -158,10 +158,10 @@
                                                                 <option value="2">5</option>
                                                             </select><span>01</span>
                                                         </div>
-                                                        <p class="ps-product__price sale">$1020.99 <del>$1120.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}1020.99 <del>{{env("APP_CURRENCY")}}1120.00</del></p>
                                                     </div>
                                                     <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Apple MacBook Air Retina 13.3-Inch Laptop</a>
-                                                        <p class="ps-product__price sale">$1020.99 <del>$1120.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}1020.99 <del>{{env("APP_CURRENCY")}}1120.00</del></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,10 +188,10 @@
                                                                 <option value="2">5</option>
                                                             </select><span>01</span>
                                                         </div>
-                                                        <p class="ps-product__price sale">$64.99 <del>$80.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}64.99 <del>{{env("APP_CURRENCY")}}80.00</del></p>
                                                     </div>
                                                     <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Samsung Gear VR Virtual Reality Headset</a>
-                                                        <p class="ps-product__price sale">$64.99 <del>$80.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}64.99 <del>{{env("APP_CURRENCY")}}80.00</del></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -218,10 +218,10 @@
                                                                 <option value="2">5</option>
                                                             </select><span>01</span>
                                                         </div>
-                                                        <p class="ps-product__price sale">$42.99 <del>$52.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.99 <del>{{env("APP_CURRENCY")}}52.00</del></p>
                                                     </div>
                                                     <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Bose Bluetooth &amp; Wireless Speaker 2.0 – Blue</a>
-                                                        <p class="ps-product__price sale">$42.99 <del>$52.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.99 <del>{{env("APP_CURRENCY")}}52.00</del></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -248,10 +248,10 @@
                                                                 <option value="2">5</option>
                                                             </select><span>01</span>
                                                         </div>
-                                                        <p class="ps-product__price sale">$542.99 <del>$592.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}542.99 <del>{{env("APP_CURRENCY")}}592.00</del></p>
                                                     </div>
                                                     <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Samsung Gallaxy A8 8GB Ram – Sliver Version</a>
-                                                        <p class="ps-product__price sale">$542.99 <del>$592.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}542.99 <del>{{env("APP_CURRENCY")}}592.00</del></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -278,10 +278,10 @@
                                                                 <option value="2">5</option>
                                                             </select><span>01</span>
                                                         </div>
-                                                        <p class="ps-product__price sale">$542.99 <del>$592.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}542.99 <del>{{env("APP_CURRENCY")}}592.00</del></p>
                                                     </div>
                                                     <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Samsung Gallaxy A8 8GB Ram – Sliver Version</a>
-                                                        <p class="ps-product__price sale">$542.99 <del>$592.00</del></p>
+                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}542.99 <del>{{env("APP_CURRENCY")}}592.00</del></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -322,7 +322,7 @@
                                                 </ul>
                                             </div>
                                             <div class="ps-product__shopping">
-                                                <p class="ps-product__price sale">$1389.99 <del>$1893.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
+                                                <p class="ps-product__price sale">{{env("APP_CURRENCY")}}1389.99 <del>{{env("APP_CURRENCY")}}1893.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
                                                 <ul class="ps-product__actions">
                                                     <li><a href="vendor-store.html#"><i class="icon-heart"></i> Wishlist</a></li>
                                                     <li><a href="vendor-store.html#"><i class="icon-chart-bars"></i> Compare</a></li>
@@ -355,7 +355,7 @@
                                                 </ul>
                                             </div>
                                             <div class="ps-product__shopping">
-                                                <p class="ps-product__price sale">$820.99 <del>$893.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
+                                                <p class="ps-product__price sale">{{env("APP_CURRENCY")}}820.99 <del>{{env("APP_CURRENCY")}}893.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
                                                 <ul class="ps-product__actions">
                                                     <li><a href="vendor-store.html#"><i class="icon-heart"></i> Wishlist</a></li>
                                                     <li><a href="vendor-store.html#"><i class="icon-chart-bars"></i> Compare</a></li>
@@ -388,7 +388,7 @@
                                                 </ul>
                                             </div>
                                             <div class="ps-product__shopping">
-                                                <p class="ps-product__price sale">$1020.99 <del>$1120.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
+                                                <p class="ps-product__price sale">{{env("APP_CURRENCY")}}1020.99 <del>{{env("APP_CURRENCY")}}1120.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
                                                 <ul class="ps-product__actions">
                                                     <li><a href="vendor-store.html#"><i class="icon-heart"></i> Wishlist</a></li>
                                                     <li><a href="vendor-store.html#"><i class="icon-chart-bars"></i> Compare</a></li>
@@ -421,7 +421,7 @@
                                                 </ul>
                                             </div>
                                             <div class="ps-product__shopping">
-                                                <p class="ps-product__price sale">$64.99 <del>$80.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
+                                                <p class="ps-product__price sale">{{env("APP_CURRENCY")}}64.99 <del>{{env("APP_CURRENCY")}}80.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
                                                 <ul class="ps-product__actions">
                                                     <li><a href="vendor-store.html#"><i class="icon-heart"></i> Wishlist</a></li>
                                                     <li><a href="vendor-store.html#"><i class="icon-chart-bars"></i> Compare</a></li>
@@ -454,7 +454,7 @@
                                                 </ul>
                                             </div>
                                             <div class="ps-product__shopping">
-                                                <p class="ps-product__price sale">$42.99 <del>$52.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
+                                                <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.99 <del>{{env("APP_CURRENCY")}}52.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
                                                 <ul class="ps-product__actions">
                                                     <li><a href="vendor-store.html#"><i class="icon-heart"></i> Wishlist</a></li>
                                                     <li><a href="vendor-store.html#"><i class="icon-chart-bars"></i> Compare</a></li>
@@ -487,7 +487,7 @@
                                                 </ul>
                                             </div>
                                             <div class="ps-product__shopping">
-                                                <p class="ps-product__price sale">$542.99 <del>$592.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
+                                                <p class="ps-product__price sale">{{env("APP_CURRENCY")}}542.99 <del>{{env("APP_CURRENCY")}}592.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
                                                 <ul class="ps-product__actions">
                                                     <li><a href="vendor-store.html#"><i class="icon-heart"></i> Wishlist</a></li>
                                                     <li><a href="vendor-store.html#"><i class="icon-chart-bars"></i> Compare</a></li>
@@ -520,7 +520,7 @@
                                                 </ul>
                                             </div>
                                             <div class="ps-product__shopping">
-                                                <p class="ps-product__price sale">$542.99 <del>$592.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
+                                                <p class="ps-product__price sale">{{env("APP_CURRENCY")}}542.99 <del>{{env("APP_CURRENCY")}}592.00</del></p><a class="ps-btn" href="vendor-store.html#">Add to cart</a>
                                                 <ul class="ps-product__actions">
                                                     <li><a href="vendor-store.html#"><i class="icon-heart"></i> Wishlist</a></li>
                                                     <li><a href="vendor-store.html#"><i class="icon-chart-bars"></i> Compare</a></li>
