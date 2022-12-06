@@ -48,6 +48,19 @@
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{route('vendor-products')}}" key="t-wallet">All Products</a></li>
                 <li><a href="{{route('vendor-add-product')}}" key="t-wallet">Add Product</a></li>
+                <li><a href="{{route('vendor-add-product')}}" key="t-wallet">Categories</a></li>
+                <li><a href="{{route('brands')}}" key="t-wallet">Brands</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="bx bx-font-family"></i>
+                <span key="t-categories"> Categories</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{route('categories')}}" key="t-wallet">Category</a></li>
+                <li><a href="{{route('categories')}}" key="t-wallet">Sub-Category</a></li>
+                <li><a href="{{route('categories')}}" key="t-wallet">Sub-sub-Category</a></li>
             </ul>
         </li>
         <li class="menu-title">Reports & Logs</li>

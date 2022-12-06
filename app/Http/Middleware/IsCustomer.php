@@ -16,9 +16,13 @@ class IsCustomer
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->is_admin == 2){
-            return $next($request);
-        }
-        return redirect()->route('customer-dashboard');
+       if(auth()->check()){
+           if(auth()->user()->is_admin == 2){
+               return $next($request);
+           }
+           return redirect()->route('customer-dashboard');
+       }else{
+           return redirect()->route('homepage');
+       }
     }
 }

@@ -70,6 +70,10 @@ Route::group(['prefix'=>'vendor', 'middleware'=>'is_vendor'],function(){
     Route::get('/', [App\Http\Controllers\Vendor\VendorController::class, 'showVendorDashboard'])->name('vendor-dashboard');
     Route::get('/products', [App\Http\Controllers\Vendor\ProductController::class, 'showProducts'])->name('vendor-products');
     Route::get('/add-product', [App\Http\Controllers\Vendor\ProductController::class, 'showAddProductForm'])->name('vendor-add-product');
+    Route::get('/brands', [App\Http\Controllers\Admin\BrandController::class, 'index'])->name('brands');
+    Route::post('/brands', [App\Http\Controllers\Admin\BrandController::class, 'store']);
+    Route::get('/categories', [App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('categories');
+    Route::post('/categories', [App\Http\Controllers\Admin\CategoryController::class, 'storeCategory']);
 });
 
 
