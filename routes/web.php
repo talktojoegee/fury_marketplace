@@ -63,6 +63,7 @@ Route::group(['prefix'=>'super-channel', 'middleware'=>'is_admin'],function(){
     Route::get('/', [App\Http\Controllers\AdminController::class, 'adminDashboard'])->name('admin-dashboard');
 });
 
+Route::post('/get-brands-id', [App\Http\Controllers\GeneralController::class, 'getBrandByCategoryId'])->name('get-brands-id');
 /*
  * Vendor routes
  */

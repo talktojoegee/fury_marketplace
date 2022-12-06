@@ -57,7 +57,7 @@
                             <div class="col-sm-4 col-md-6 lg-6">
                                 <div class="form-group">
                                     <label for="">Category<sup class="text-danger">*</sup></label>
-                                    <select class="form-control select2" name="category">
+                                    <select class="form-control select2" name="category" id="categoryHandler">
                                         <option disabled selected>--Select Category--</option>
                                         @foreach($categories as $cat)
                                             <option value="{{$cat->id}}">{{$cat->name ?? '' }}</option>
@@ -76,11 +76,10 @@
                             <div class="col-sm-4 col-md-6 lg-6">
                                 <div class="form-group">
                                     <label for="">Brand<sup class="text-danger">*</sup></label>
-                                    <select class="form-control select2" name="location">
-                                        <option disabled selected>Select Location</option>
+                                    <div id="brandWrapper">
 
-                                    </select>
-                                    <br> @error('location')<i class="text-danger">{{$message}}</i>@enderror
+                                    </div>
+                                    <br> @error('brand')<i class="text-danger">{{$message}}</i>@enderror
                                 </div>
                             </div>
                             <div class="col-sm-4 col-md-6 lg-6">
@@ -264,10 +263,26 @@
     <script src="/assets/libs/select2/js/select2.min.js"></script>
     <script src="/assets/js/pages/form-advanced.init.js"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="/assets/js/axios.min.js"></script>
     <script>
         $(document).ready(function(){
+            $('#categoryHandler').on('change',function(){
+                let catId = $(this).val();
+                if(catId !== null || catId !== ""){
+                    axios.post("{{route('get-brands-id')}}",{
+                        catId
+                    })
+                    .then((res)=>{
+                        $('#brandWrapper').html(res.data);
+                    })
+                    .catch(error=>{
+                        console.log(error)
+                    });
+                }
+            });
+
             let options = {
-                placeholder: 'Enter property description here...',
+                placeholder: 'Enter product description here...',
                 theme: 'snow'
             };
             let quill = new Quill('#editor', options);

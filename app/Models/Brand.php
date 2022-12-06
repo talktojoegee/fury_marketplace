@@ -31,6 +31,9 @@ class Brand extends Model
         $brand->save();
     }
 
+    public function getBrandsByCategoryId($catId){
+        return Brand::where('category_id', $catId)->orderBy('name', 'ASC')->get();
+    }
     public function getBrands(){
         return Brand::orderBy('name', 'ASC')->get();
     }

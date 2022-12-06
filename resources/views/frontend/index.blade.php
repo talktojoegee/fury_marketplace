@@ -1133,7 +1133,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                                 <div class="ps-block__content">
-                                    <h3>Download Martfury App Now!</h3>
+                                    <h3>Download {{env('APP_NAME')}} App Now!</h3>
                                     <p>Shopping fastly and easily more with our app. Get a link to download the app on your phone</p>
                                     <form class="ps-form--download-app" action="do_action" method="post">
                                         <div class="form-group--nest">
