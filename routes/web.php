@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return "Hello Index";
-})->name('homepage');
+Route::get('/',[App\Http\Controllers\Frontend\HomepageController::class, 'showHomepage'])->name('homepage');
+Route::get('/stores',[App\Http\Controllers\Frontend\HomepageController::class, 'showStores'])->name('stores');
+Route::get('/stores/{slug}',[App\Http\Controllers\Frontend\HomepageController::class, 'showStoreDetails'])->name('store-details');
+Route::get('/become-a-vendor',[App\Http\Controllers\Frontend\HomepageController::class, 'showBecomeAVendor'])->name('become-a-vendor');
+Route::post('/become-a-vendor',[App\Http\Controllers\Frontend\HomepageController::class, 'storeVendorRegistration']);
 
 Route::prefix('/settings')->group(function(){
     Route::get('/locations', [App\Http\Controllers\Admin\SettingsController::class, 'locationSetup'])->name('location-setup');
@@ -59,6 +61,15 @@ Route::group(['prefix'=>'app', 'middleware'=>'is_customer'],function(){
 
 Route::group(['prefix'=>'super-channel', 'middleware'=>'is_admin'],function(){
     Route::get('/', [App\Http\Controllers\AdminController::class, 'adminDashboard'])->name('admin-dashboard');
+});
+
+/*
+ * Vendor routes
+ */
+Route::group(['prefix'=>'vendor', 'middleware'=>'is_vendor'],function(){
+    Route::get('/', [App\Http\Controllers\Vendor\VendorController::class, 'showVendorDashboard'])->name('vendor-dashboard');
+    Route::get('/products', [App\Http\Controllers\Vendor\ProductController::class, 'showProducts'])->name('vendor-products');
+    Route::get('/add-product', [App\Http\Controllers\Vendor\ProductController::class, 'showAddProductForm'])->name('vendor-add-product');
 });
 
 

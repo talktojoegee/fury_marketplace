@@ -30,12 +30,6 @@
             </a>
         </li>
         <li>
-            <a href="{{route('schedule-sms')}}" class="waves-effect">
-                <i class="bx bx-timer"></i>
-                <span key="t-chat">Schedule SMS</span>
-            </a>
-        </li>
-        <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bx-shield-quarter"></i>
                 <span key="t-ecommerce">Sender IDs</span>
@@ -43,6 +37,17 @@
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{route('create-senders')}}" key="t-products">Register ID</a></li>
                 <li><a href="{{route('registered-senders')}}" key="t-product-detail">All Sender IDs</a></li>
+            </ul>
+        </li>
+        <li class="menu-title">Products</li>
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="bx bx-font-family"></i>
+                <span key="t-products"> Products</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{route('vendor-products')}}" key="t-wallet">All Products</a></li>
+                <li><a href="{{route('vendor-add-product')}}" key="t-wallet">Add Product</a></li>
             </ul>
         </li>
         <li class="menu-title">Reports & Logs</li>
@@ -53,17 +58,6 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li><a href="{{route('batch-report')}}" key="t-wallet">By Batch</a></li>
-                <li><a href="crypto-buy-sell.html" key="t-buy">All Reports</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                <i class="bx bx-mail-send"></i>
-                <span key="t-crypto">Message History</span>
-            </a>
-            <ul class="sub-menu" aria-expanded="false">
-                <li><a href="crypto-wallet.html" key="t-wallet">Sent Messages</a></li>
-                <li><a href="crypto-wallet.html" key="t-wallet">Scheduled Messages</a></li>
             </ul>
         </li>
         <li>

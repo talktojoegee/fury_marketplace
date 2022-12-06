@@ -65,8 +65,20 @@ class User extends Authenticatable
     public function createUser(Request $request){
         $user = new User();
         $user->first_name = $request->firstName;
-        $user->mobile_no = $request->phoneNumber;
+        $user->mobile_no = $request->phoneNumber ?? $request->mobileNo;
         $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->uuid = Str::uuid();
+        $user->api_token = Str::random(60);
+        $user->save();
+        return $user;
+    }
+    public function generalCreateUser(Request $request, $userType){
+        $user = new User();
+        $user->first_name = $request->firstName;
+        $user->mobile_no = $request->phoneNumber ?? $request->mobileNo;
+        $user->email = $request->email;
+        $user->is_admin = $userType;
         $user->password = bcrypt($request->password);
         $user->uuid = Str::uuid();
         $user->api_token = Str::random(60);

@@ -19,6 +19,6 @@ class IsCustomer
         if(auth()->user()->is_admin == 2){
             return $next($request);
         }
-        return redirect()->route('admin-dashboard');
+        return redirect()->route('customer-dashboard');
     }
 }

@@ -203,6 +203,12 @@
                 var leng = $(this).val();
                 $('#character-counter').text(leng.length+1);
             });
+            $(document).on('blur','#phone_numbers', function() {
+                let str = $('#phone_numbers').val();
+                //str.split(/[ ,]+/).filter(function(v){return v!==''}).join(',')
+                let output = str.split(" ").join(';');
+                $('#phone_numbers').val(output);
+            });
         });
     </script>
 @endsection

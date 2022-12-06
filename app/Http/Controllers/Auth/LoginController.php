@@ -54,10 +54,19 @@ class LoginController extends Controller
         $user = $this->user->getUserByEmail($request->email);
         if(!empty($user)){
             if(Auth::attempt(['email'=>$request->email, 'password'=>$request->password], $request->remember)){
-                if(Auth::user()->is_admin == 2){
-                    return redirect()->route('compose-sms');
-                }else{
-                    return redirect()->route('admin-dashboard');
+                $userType = Auth::user()->is_admin;
+                switch($userType){
+                    case 1:
+                        return redirect()->route('admin-dashboard');
+                        break;
+                    case 2:
+                        return redirect()->route('customer-profile');
+                        break;
+                    case 3:
+                        return redirect()->route('vendor-dashboard');
+                        break;
+                    default:
+                        return 'hello';
                 }
 
             }else{

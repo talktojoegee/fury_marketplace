@@ -8,7 +8,7 @@
     <meta content="SMS Channel login portal" name="description" />
     <meta content="{{config('app.name')}}" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="/assets/images/logo.png">
     <!-- Bootstrap Css -->
     <link href="/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                             <div class="col-5 align-self-end">
-                                <img src="/assets/images/logo.png" alt="" class="img-fluid">
+                                <img src="/assets/images/logo-dark.png" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
