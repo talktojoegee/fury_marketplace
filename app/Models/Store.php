@@ -23,6 +23,10 @@ class Store extends Model
         return $store;
     }
 
+    public static function getVendorStore($vendorId){
+        return Store::where('vendor_id', $vendorId)->first();
+    }
+
     public function getActiveStores(){
         return Store::where('status', 1)->orderBy('store_name', 'ASC')->get();
     }

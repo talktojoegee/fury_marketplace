@@ -33,7 +33,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="#" method="post" autocomplete="off" id="addPropertyForm" enctype="multipart/form-data">
+                    <form action="{{route('vendor-add-product')}}" method="post" autocomplete="off" id="addPropertyForm" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -68,9 +68,9 @@
                             </div>
                             <div class="col-sm-6 col-md-6 lg-6 mt-2">
                                 <div class="form-group">
-                                    <label for="">Property Estimated Value<sup class="text-danger">*</sup></label>
-                                    <input type="number" step="0.01" placeholder="Price" name="price" id="price" value="{{old('price')}}" class="form-control">
-                                    <br> @error('price')<i class="text-danger">{{$message}}</i>@enderror
+                                    <label for="">SKU<sup class="text-danger">*</sup></label>
+                                    <input type="text"  placeholder="SKU" name="sku" id="sku" value="{{old('sku')}}" class="form-control">
+                                    <br> @error('sku')<i class="text-danger">{{$message}}</i>@enderror
                                 </div>
                             </div>
                             <div class="col-sm-4 col-md-6 lg-6">
@@ -82,18 +82,12 @@
                                     <br> @error('brand')<i class="text-danger">{{$message}}</i>@enderror
                                 </div>
                             </div>
-                            <div class="col-sm-4 col-md-6 lg-6">
-                                <div class="form-group">
-                                    <label for="">Address <small >(Optional)</small></label>
-                                    <textarea name="address" style="resize: none;" placeholder="Enter address here..." class="form-control">{{old('address')}}</textarea>
-                                    <br> @error('address')<i class="text-danger">{{$message}}</i>@enderror
-                                </div>
-                            </div>
+
                             <div class="col-sm-6 col-md-6 lg-6">
                                 <div class="form-group">
-                                    <label for="">Property Size <small >(Optional)</small></label>
-                                    <input type="text" placeholder="Property Size" name="propertySize" id="propertySize" value="{{old('propertySize')}}" class="form-control">
-                                    <br> @error('propertySize')<i class="text-danger">{{$message}}</i>@enderror
+                                    <label for="">Price<sup class="text-danger">*</sup></label>
+                                    <input type="number" placeholder="Price" name="price" id="price" value="{{old('price')}}" class="form-control">
+                                    <br> @error('price')<i class="text-danger">{{$message}}</i>@enderror
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-6 lg-6">
@@ -104,145 +98,12 @@
                                 </div>
                             </div>
                             <div class="row mt-3">
-                                <div class="col-md-8 col-sm-8 col-lg-8">
+                                <div class="col-md-12 col-sm-12 col-lg-12">
                                     <div class="form-group">
                                         <label for="">Description</label>
                                         <div id="editor" style="height: 250px;"></div>
-                                        <textarea name="propertyDescription" id="hiddenContent" style="display: none">{{old('hiddenContent')}}</textarea>
+                                        <textarea name="productDescription" id="hiddenContent" style="display: none">{{old('hiddenContent')}}</textarea>
                                         @error('description') <i class="text-danger">{{$message}}</i> @enderror
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-lg-4">
-                                    <div class="card-header bg-custom text-white">Features</div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="">No. of Rooms</label>
-                                                <input type="number" name="noOfRooms" value="{{old('noOfRooms',0)}}" placeholder="No. of Rooms"  class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="">No. of Sitting Rooms</label>
-                                                <input type="number" name="noOfSittingRooms" value="{{old('noOfSittingRooms',0)}}" placeholder="No. of Sitting Rooms"  class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 mt-3">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="kitchen"  type="checkbox" id="kitchen">
-                                                        <label class="form-check-label" for="kitchen">Kitchen?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="borehole"  type="checkbox" id="borehole">
-                                                        <label class="form-check-label" for="borehole">Borehole?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="pool"  type="checkbox" id="pool">
-                                                        <label class="form-check-label" for="pool">Pool?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="security"  type="checkbox" id="security">
-                                                        <label class="form-check-label" for="security">Security?</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="carPark" type="checkbox" id="carPark">
-                                                        <label class="form-check-label" for="carPark">Car park?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="garage" type="checkbox" id="garage">
-                                                        <label class="form-check-label" for="garage">Garage?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="laundry" type="checkbox" id="laundry">
-                                                        <label class="form-check-label" for="laundry">Laundry?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="storeRoom"  type="checkbox" id="storeRoom">
-                                                        <label class="form-check-label" for="storeRoom">Store Room?</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="balcony" type="checkbox" id="balcony">
-                                                        <label class="form-check-label" for="balcony">Balcony?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="elevator" type="checkbox" id="elevator">
-                                                        <label class="form-check-label" for="elevator">Elevator?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="playGround" type="checkbox" id="playGround">
-                                                        <label class="form-check-label" for="playGround">Play ground?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="lounge"  type="checkbox" id="lounge">
-                                                        <label class="form-check-label" for="lounge">Lounge?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="wifi"  type="checkbox" id="wifi">
-                                                        <label class="form-check-label" for="wifi">Wifi?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="tv"  type="checkbox" id="tv">
-                                                        <label class="form-check-label" for="tv">Television?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="dryer"  type="checkbox" id="dryer">
-                                                        <label class="form-check-label" for="dryer">Dryer?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="smokeAlarm"  type="checkbox" id="smokeAlarm">
-                                                        <label class="form-check-label" for="smokeAlarm">Smoke Alarm?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="airConditioning"  type="checkbox" id="airConditioning">
-                                                        <label class="form-check-label" for="airConditioning">Air Conditioning?</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-check form-switch mb-3">
-                                                        <input class="form-check-input" name="washer"  type="checkbox" id="washer">
-                                                        <label class="form-check-label" for="washer">Washer?</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

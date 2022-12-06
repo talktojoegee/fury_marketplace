@@ -18,6 +18,7 @@ Route::get('/stores',[App\Http\Controllers\Frontend\HomepageController::class, '
 Route::get('/stores/{slug}',[App\Http\Controllers\Frontend\HomepageController::class, 'showStoreDetails'])->name('store-details');
 Route::get('/become-a-vendor',[App\Http\Controllers\Frontend\HomepageController::class, 'showBecomeAVendor'])->name('become-a-vendor');
 Route::post('/become-a-vendor',[App\Http\Controllers\Frontend\HomepageController::class, 'storeVendorRegistration']);
+Route::get('/product/{slug}',[App\Http\Controllers\Frontend\HomepageController::class, 'showProductDetails'])->name('show-product-details');
 
 Route::prefix('/settings')->group(function(){
     Route::get('/locations', [App\Http\Controllers\Admin\SettingsController::class, 'locationSetup'])->name('location-setup');
@@ -71,6 +72,7 @@ Route::group(['prefix'=>'vendor', 'middleware'=>'is_vendor'],function(){
     Route::get('/', [App\Http\Controllers\Vendor\VendorController::class, 'showVendorDashboard'])->name('vendor-dashboard');
     Route::get('/products', [App\Http\Controllers\Vendor\ProductController::class, 'showProducts'])->name('vendor-products');
     Route::get('/add-product', [App\Http\Controllers\Vendor\ProductController::class, 'showAddProductForm'])->name('vendor-add-product');
+    Route::post('/add-product', [App\Http\Controllers\Vendor\ProductController::class, 'storeProduct']);
     Route::get('/brands', [App\Http\Controllers\Admin\BrandController::class, 'index'])->name('brands');
     Route::post('/brands', [App\Http\Controllers\Admin\BrandController::class, 'store']);
     Route::get('/categories', [App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('categories');

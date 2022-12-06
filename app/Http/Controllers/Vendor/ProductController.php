@@ -27,4 +27,22 @@ class ProductController extends Controller
             'categories'=>$this->category->getCategories()
         ]);
     }
+
+    public function storeProduct(Request $request){
+        $this->validate($request,[
+            "productName"=>"required",
+            "quantity"=>"required",
+            "category"=>"required",
+            "sku"=>"required",
+            "brand"=>"required",
+            "price"=>"required",
+            "productDescription"=>"required",
+            'gallery'=>'required|array',
+            'gallery.*'=>'required|image|mimes:jpeg,png,jpg',
+        ]);
+        $product = $this->product->addProduct($request);
+        $this->productgallery->uploadProductGalleryImages($request, $product->id);
+        session()->flash("success", "Product published!");
+        return back();
+    }
 }

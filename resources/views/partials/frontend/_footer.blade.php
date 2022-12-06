@@ -46,20 +46,6 @@
                 </ul>
             </aside>
         </div>
-        <div class="ps-footer__links">
-            <p><strong>Consumer Electric:</strong><a href="index.html#">Air Conditioners</a><a href="index.html#">Audios &amp; Theaters</a><a href="index.html#">Car Electronics</a><a href="index.html#">Office Electronics</a><a href="index.html#">TV Televisions</a><a href="index.html#">Washing Machines</a>
-            </p>
-            <p><strong>Clothing &amp; Apparel:</strong><a href="index.html#">Printers</a><a href="index.html#">Projectors</a><a href="index.html#">Scanners</a><a href="index.html#">Store &amp; Business</a><a href="index.html#">4K Ultra HD TVs</a><a href="index.html#">LED TVs</a><a href="index.html#">OLED TVs</a>
-            </p>
-            <p><strong>Home, Garden &amp; Kitchen:</strong><a href="index.html#">Cookware</a><a href="index.html#">Decoration</a><a href="index.html#">Furniture</a><a href="index.html#">Garden Tools</a><a href="index.html#">Garden Equipments</a><a href="index.html#">Powers And Hand Tools</a><a href="index.html#">Utensil &amp; Gadget</a>
-            </p>
-            <p><strong>Health &amp; Beauty:</strong><a href="index.html#">Hair Care</a><a href="index.html#">Decoration</a><a href="index.html#">Hair Care</a><a href="index.html#">Makeup</a><a href="index.html#">Body Shower</a><a href="index.html#">Skin Care</a><a href="index.html#">Cologine</a><a href="index.html#">Perfume</a>
-            </p>
-            <p><strong>Jewelry &amp; Watches:</strong><a href="index.html#">Necklace</a><a href="index.html#">Pendant</a><a href="index.html#">Diamond Ring</a><a href="index.html#">Sliver Earing</a><a href="index.html#">Leather Watcher</a><a href="index.html#">Gucci</a>
-            </p>
-            <p><strong>Computer &amp; Technologies:</strong><a href="index.html#">Desktop PC</a><a href="index.html#">Laptop</a><a href="index.html#">Smartphones</a><a href="index.html#">Tablet</a><a href="index.html#">Game Controller</a><a href="index.html#">Audio &amp; Video</a><a href="index.html#">Wireless Speaker</a><a href="index.html#">Done</a>
-            </p>
-        </div>
         <div class="ps-footer__copyright">
             <p>&copy; {{date('Y')}} {{env('APP_NAME')}}. All Rights Reserved</p>
             <p><span>We Using Safe Payment For:</span><a href="index.html#">

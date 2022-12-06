@@ -45,6 +45,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+    public function getVendorStore(){
+        return $this->belongsTo(Store::class, 'vendor_id');
+    }
     public function getUserAccount(){ //git test
         return $this->hasMany(BulkSmsAccount::class, 'user_id')->orderBy('id', 'DESC');
     }

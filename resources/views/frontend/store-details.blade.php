@@ -55,7 +55,7 @@
                         <div class="ps-shopping ps-tab-root">
                             <div class="ps-shopping__header">
 
-                                <p><strong> 36</strong> Products found</p>
+                                <p><strong> {{number_format($products->count())}}</strong> Products</p>
                                 <div class="ps-shopping__actions">
                                     <select class="ps-select" data-placeholder="Sort Items">
                                         <option>Sort by latest</option>
@@ -76,225 +76,34 @@
                             <div class="ps-tabs">
                                 <div class="ps-tab active" id="tab-1">
                                     <div class="row">
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
+                                        @forelse($products as $product)
+                                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
                                             <div class="ps-product">
-                                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/technology/1.jpg" alt="" /></a>
-                                                    <div class="ps-product__badge">11%</div>
+                                                <div class="ps-product__thumbnail">
+                                                    <a href="{{route('show-product-details', $product->slug)}}">
+                                                        <img src="/storage/{{$product->getFeaturedProductImage($product->id)->attachment ?? '' }}" alt="{{$product->name ?? '' }}">
+                                                    </a>
                                                     <ul class="ps-product__actions">
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag2"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                                        <li><a href="{{route('show-product-details', $product->slug)}}" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
+                                                        <li><a href="{{route('show-product-details', $product->slug)}}" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <div class="ps-product__container"><a class="ps-product__vendor" href="vendor-store.html#"></a>
-                                                    <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Apple iPhone X 256GB T-Mobile – Black</a>
-                                                        <div class="ps-product__rating">
-                                                            <select class="ps-rating" data-read-only="true">
-                                                                <option value="1">1</option>
-                                                                <option value="1">2</option>
-                                                                <option value="1">3</option>
-                                                                <option value="1">4</option>
-                                                                <option value="2">5</option>
-                                                            </select><span>01</span>
-                                                        </div>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}1389.99 <del>{{env("APP_CURRENCY")}}1893.00</del></p>
-                                                    </div>
-                                                    <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Apple iPhone X 256GB T-Mobile – Black</a>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}1389.99 <del>{{env("APP_CURRENCY")}}1893.00</del></p>
+                                                <div class="ps-product__container">
+                                                    <p class="ps-product__price sale">{{env("APP_CURRENCY")}}{{number_format($product->normal_price)}} <del>{{env("APP_CURRENCY")}}{{number_format($product->normal_price)}} </del>
+                                                    </p>
+                                                    <div class="ps-product__content">
+                                                        <a class="ps-product__title" href="{{route('show-product-details', $product->slug)}}">{{$product->name ?? '' }}</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                                            <div class="ps-product">
-                                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="/img/products/technology/2.jpg" alt="" /></a>
-                                                    <div class="ps-product__badge">11%</div>
-                                                    <ul class="ps-product__actions">
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag2"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="ps-product__container"><a class="ps-product__vendor" href="vendor-store.html#">Global Office</a>
-                                                    <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Apple iPhone 7 Plus 128 GB – Red Color</a>
-                                                        <div class="ps-product__rating">
-                                                            <select class="ps-rating" data-read-only="true">
-                                                                <option value="1">1</option>
-                                                                <option value="1">2</option>
-                                                                <option value="1">3</option>
-                                                                <option value="1">4</option>
-                                                                <option value="2">5</option>
-                                                            </select><span>01</span>
-                                                        </div>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}820.99 <del>{{env("APP_CURRENCY")}}893.00</del></p>
-                                                    </div>
-                                                    <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Apple iPhone 7 Plus 128 GB – Red Color</a>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}820.99 <del>{{env("APP_CURRENCY")}}893.00</del></p>
-                                                    </div>
-                                                </div>
+                                        @empty
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <p class="text-center">This store currently has no product...</p>
                                             </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                                            <div class="ps-product">
-                                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="/img/products/technology/3.jpg" alt="" /></a>
-                                                    <div class="ps-product__badge">21%</div>
-                                                    <ul class="ps-product__actions">
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag2"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="ps-product__container"><a class="ps-product__vendor" href="vendor-store.html#">Global Office</a>
-                                                    <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Apple MacBook Air Retina 13.3-Inch Laptop</a>
-                                                        <div class="ps-product__rating">
-                                                            <select class="ps-rating" data-read-only="true">
-                                                                <option value="1">1</option>
-                                                                <option value="1">2</option>
-                                                                <option value="1">3</option>
-                                                                <option value="1">4</option>
-                                                                <option value="2">5</option>
-                                                            </select><span>01</span>
-                                                        </div>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}1020.99 <del>{{env("APP_CURRENCY")}}1120.00</del></p>
-                                                    </div>
-                                                    <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Apple MacBook Air Retina 13.3-Inch Laptop</a>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}1020.99 <del>{{env("APP_CURRENCY")}}1120.00</del></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                                            <div class="ps-product">
-                                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="/img/products/technology/4.jpg" alt="" /></a>
-                                                    <div class="ps-product__badge">18%</div>
-                                                    <ul class="ps-product__actions">
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag2"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="ps-product__container"><a class="ps-product__vendor" href="vendor-store.html#">Global Office</a>
-                                                    <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Samsung Gear VR Virtual Reality Headset</a>
-                                                        <div class="ps-product__rating">
-                                                            <select class="ps-rating" data-read-only="true">
-                                                                <option value="1">1</option>
-                                                                <option value="1">2</option>
-                                                                <option value="1">3</option>
-                                                                <option value="1">4</option>
-                                                                <option value="2">5</option>
-                                                            </select><span>01</span>
-                                                        </div>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}64.99 <del>{{env("APP_CURRENCY")}}80.00</del></p>
-                                                    </div>
-                                                    <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Samsung Gear VR Virtual Reality Headset</a>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}64.99 <del>{{env("APP_CURRENCY")}}80.00</del></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                                            <div class="ps-product">
-                                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/technology/5.jpg" alt="" /></a>
-                                                    <div class="ps-product__badge">18%</div>
-                                                    <ul class="ps-product__actions">
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag2"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="ps-product__container"><a class="ps-product__vendor" href="vendor-store.html#">Global Office</a>
-                                                    <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Bose Bluetooth &amp; Wireless Speaker 2.0 – Blue</a>
-                                                        <div class="ps-product__rating">
-                                                            <select class="ps-rating" data-read-only="true">
-                                                                <option value="1">1</option>
-                                                                <option value="1">2</option>
-                                                                <option value="1">3</option>
-                                                                <option value="1">4</option>
-                                                                <option value="2">5</option>
-                                                            </select><span>01</span>
-                                                        </div>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.99 <del>{{env("APP_CURRENCY")}}52.00</del></p>
-                                                    </div>
-                                                    <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Bose Bluetooth &amp; Wireless Speaker 2.0 – Blue</a>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}42.99 <del>{{env("APP_CURRENCY")}}52.00</del></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                                            <div class="ps-product">
-                                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/technology/6.jpg" alt="" /></a>
-                                                    <div class="ps-product__badge">17%</div>
-                                                    <ul class="ps-product__actions">
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag2"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="ps-product__container"><a class="ps-product__vendor" href="vendor-store.html#">Global Office</a>
-                                                    <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Samsung Gallaxy A8 8GB Ram – Sliver Version</a>
-                                                        <div class="ps-product__rating">
-                                                            <select class="ps-rating" data-read-only="true">
-                                                                <option value="1">1</option>
-                                                                <option value="1">2</option>
-                                                                <option value="1">3</option>
-                                                                <option value="1">4</option>
-                                                                <option value="2">5</option>
-                                                            </select><span>01</span>
-                                                        </div>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}542.99 <del>{{env("APP_CURRENCY")}}592.00</del></p>
-                                                    </div>
-                                                    <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Samsung Gallaxy A8 8GB Ram – Sliver Version</a>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}542.99 <del>{{env("APP_CURRENCY")}}592.00</del></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                                            <div class="ps-product">
-                                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/technology/7.jpg" alt="" /></a>
-                                                    <div class="ps-product__badge">17%</div>
-                                                    <ul class="ps-product__actions">
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag2"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
-                                                        <li><a href="vendor-store.html#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="ps-product__container"><a class="ps-product__vendor" href="vendor-store.html#">Global Office</a>
-                                                    <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Samsung Gallaxy A8 8GB Ram – Sliver Version</a>
-                                                        <div class="ps-product__rating">
-                                                            <select class="ps-rating" data-read-only="true">
-                                                                <option value="1">1</option>
-                                                                <option value="1">2</option>
-                                                                <option value="1">3</option>
-                                                                <option value="1">4</option>
-                                                                <option value="2">5</option>
-                                                            </select><span>01</span>
-                                                        </div>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}542.99 <del>{{env("APP_CURRENCY")}}592.00</del></p>
-                                                    </div>
-                                                    <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Samsung Gallaxy A8 8GB Ram – Sliver Version</a>
-                                                        <p class="ps-product__price sale">{{env("APP_CURRENCY")}}542.99 <del>{{env("APP_CURRENCY")}}592.00</del></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforelse
                                     </div>
-                                    <div class="ps-pagination">
-                                        <ul class="pagination">
-                                            <li class="active"><a href="vendor-store.html#">1</a></li>
-                                            <li><a href="vendor-store.html#">2</a></li>
-                                            <li><a href="vendor-store.html#">3</a></li>
-                                            <li><a href="vendor-store.html#">Next Page<i class="icon-chevron-right"></i></a></li>
-                                        </ul>
-                                    </div>
+
                                 </div>
                                 <div class="ps-tab" id="tab-2">
                                     <div class="ps-product ps-product--wide">

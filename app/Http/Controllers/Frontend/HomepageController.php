@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Models\Store;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,11 +14,14 @@ class HomepageController extends Controller
     public function __construct(){
         $this->user = new User();
         $this->store = new Store();
+        $this->product = new Product();
     }
 
 
     public function showHomepage(){
-        return view('frontend.index');
+        return view('frontend.index',[
+            'dayDeals'=>$this->product->getAllProducts()
+        ]);
     }
 
     public function showStores(){
@@ -30,7 +34,8 @@ class HomepageController extends Controller
         $store = $this->store->getStoreBySlug($request->slug);
         if(!empty($store)){
             return view('frontend.store-details',[
-                'store'=>$store
+                'store'=>$store,
+                'products'=>$this->product->getAllVendorProducts($store->id),
             ]);
         }else{
             return back();
@@ -63,5 +68,16 @@ class HomepageController extends Controller
         $this->store->addStore($vendor->id, $request);
         session()->flash("success", "Your account was created! Proceed to login to your account.");
         return back();
+    }
+
+    public function showProductDetails($slug){
+        $product = $this->product->getProductBySlug($slug);
+        if(!empty($product)){
+            return view('frontend.product-details',[
+                'product'=>$product
+            ]);
+        }else{
+            return back();
+        }
     }
 }
